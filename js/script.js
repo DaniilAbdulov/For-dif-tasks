@@ -1,4 +1,7 @@
-
-let r = prompt('Введите радиус круга','');
-let s = 3.14 * (r**2);
-alert(`Площадь вашего круга равна ${s}`);
+hey:
+for (let i = 2; i < 10; i++){
+    for (let j = 2; j < 10, j++;){
+        result = i * j;
+        console.log(resul);
+    }
+}
