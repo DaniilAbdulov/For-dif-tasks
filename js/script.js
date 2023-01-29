@@ -1,8 +1,12 @@
 
-let n = 10;
+let n = 40;
 
-for (let i = 1; i < n; i++){
-    for (let j = 1; j < n; j++){
-        console.log(i*j);
+function prostieChisla(){
+    cont:
+    for (i = 2; i < n; i++){
+        for (j = 2; j < i; j++){
+            if (i % j == 0)continue cont;
+        }console.log(i)
     }
 }
+prostieChisla();
