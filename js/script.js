@@ -1,12 +1,34 @@
 
-let n = 40;
+// function ask(question, yes, no) {
+//     if (confirm(question)) yes()
+//     else no();
+//   }
+  
+//   function showOk() {
+//     alert( "Вы согласны." );
+//   }
+  
+//   function showCancel() {
+//     alert( "Вы отменили выполнение." );
+//   }
+ 
+//   ask("Вы согласны?", showOk, showCancel);
 
-function prostieChisla(){
-    cont:
-    for (i = 2; i < n; i++){
-        for (j = 2; j < i; j++){
-            if (i % j == 0)continue cont;
-        }console.log(i)
-    }
+
+// function ask(question, yes, no){
+//     if (confirm(question)) yes()
+//     else no();
+// }
+
+// ask('Вы согласны ?', 
+//     function(){alert ('Вы нажали ок')},
+//     function(){alert('Вы нажали отмена')});
+    
+function ask(question, yes, no){
+    if (confirm(question)) yes()
+    else no();
 }
-prostieChisla();
+
+ask('Вы согласны ?', 
+    ()=>alert ('Вы нажали ок'),
+    ()=>alert('Вы нажали отмена'));
