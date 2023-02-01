@@ -17,14 +17,21 @@
 // }
 // alert (sum('11','12'))
 
-function convert(Celsius){
-    function Kelvin(){
-        return Celsius + 273.15;
-    }
-    function Fahrenheit(){
-        return Celsius*1.8 + 32;
-    }
+// function convert(Celsius){
+//     function Kelvin(){
+//         return Celsius + 273.15;
+//     }
+//     function Fahrenheit(){
+//         return Celsius*1.8 + 32;
+//     }
 
-    return Kelvin(),Fahrenheit();
-}
-console.log(convert(36.5));
+//     return Kelvin(),Fahrenheit();
+// }
+// console.log(convert(36.5));
+const quarterOf = (month) => {
+    return (month <4) ? 1:
+    (month <7) ? 2:
+    (month <10) ? 3:
+    4;
+  }
+alert(quarterOf(2));
