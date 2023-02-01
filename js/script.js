@@ -1,34 +1,30 @@
+'use strict';
+// Given two non-negative integers, num1 and num2 represented as string, return the sum of num1 and num2 as a string.
 
-// function ask(question, yes, no) {
-//     if (confirm(question)) yes()
-//     else no();
-//   }
-  
-//   function showOk() {
-//     alert( "Вы согласны." );
-//   }
-  
-//   function showCancel() {
-//     alert( "Вы отменили выполнение." );
-//   }
+// You must solve the problem without using any built-in library for handling large integers (such as BigInteger). You must also not convert the inputs to integers directly.
+
  
-//   ask("Вы согласны?", showOk, showCancel);
+
+// Example 1:
+
+// Input: num1 = "11", num2 = "123"
+// Output: "134"
 
 
-// function ask(question, yes, no){
-//     if (confirm(question)) yes()
-//     else no();
+// let sum = (num1, num2)=>{
+//     let result = + num1 + + num2;
+//     return String(result); 
 // }
+// alert (sum('11','12'))
 
-// ask('Вы согласны ?', 
-//     function(){alert ('Вы нажали ок')},
-//     function(){alert('Вы нажали отмена')});
-    
-function ask(question, yes, no){
-    if (confirm(question)) yes()
-    else no();
+function convert(Celsius){
+    function Kelvin(){
+        return Celsius + 273.15;
+    }
+    function Fahrenheit(){
+        return Celsius*1.8 + 32;
+    }
+
+    return Kelvin(),Fahrenheit();
 }
-
-ask('Вы согласны ?', 
-    ()=>alert ('Вы нажали ок'),
-    ()=>alert('Вы нажали отмена'));
+console.log(convert(36.5));
