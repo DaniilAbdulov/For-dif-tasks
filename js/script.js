@@ -1,37 +1,17 @@
 'use strict';
-// Given two non-negative integers, num1 and num2 represented as string, return the sum of num1 and num2 as a string.
 
-// You must solve the problem without using any built-in library for handling large integers (such as BigInteger). You must also not convert the inputs to integers directly.
-
- 
-
-// Example 1:
-
-// Input: num1 = "11", num2 = "123"
-// Output: "134"
+let menu = {
+  width: 200,
+  height: 300,
+  title: "My menu"
+};
 
 
-// let sum = (num1, num2)=>{
-//     let result = + num1 + + num2;
-//     return String(result); 
-// }
-// alert (sum('11','12'))
-
-// function convert(Celsius){
-//     function Kelvin(){
-//         return Celsius + 273.15;
-//     }
-//     function Fahrenheit(){
-//         return Celsius*1.8 + 32;
-//     }
-
-//     return Kelvin(),Fahrenheit();
-// }
-// console.log(convert(36.5));
-const quarterOf = (month) => {
-    return (month <4) ? 1:
-    (month <7) ? 2:
-    (month <10) ? 3:
-    4;
+  for (let key in menu){
+    if (typeof menu[key] == 'number'){
+      menu[key]*=2;
+    }
   }
-alert(quarterOf(2));
+
+
+console.log(menu);
