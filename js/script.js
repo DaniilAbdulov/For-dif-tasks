@@ -1,37 +1,11 @@
 'use strict';
 
+// let r = 0;
+// let n = 12;
 
-let calculator = {
-    sum (){
-        return this.a + this.b;
-    },
-    mul (){
-        return this.a * this.b;
-    },
-    read(){
-        this.a = + prompt ('a ?', '');
-        this.b = + prompt ('b ?', '');
-    }
-  };
+// for (let i = n;i<=n;i--){
+//   n % i != 0
   
-  calculator.read();
-  alert( calculator.sum() );
-  alert( calculator.mul() );
+// }r += 1
 
-let ladder = {
-    step: 0,
-    up() {
-      this.step++;
-      return this;
-    },
-    down() {
-      this.step--;
-      return this;
-    },
-    showStep: function() { // показывает текущую ступеньку
-      alert( this.step );
-      return this;
-    }
-  };
-
-  ladder.up().up().up().up().down().showStep().down().showStep();
+// console.log(r); 
