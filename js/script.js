@@ -1,4 +1,14 @@
 'use strict';
 
-const summation = n => n * (n + 1) / 2;
-console.log(summation(2));
+let str = 'Daniil Abdulov Bilalovich';
+let target = 'a';
+let pos = 0;
+
+while (true){
+    let foundPos = str.indexOf(target, pos);
+    if (foundPos == -1) break;
+    if (foundPos){
+        pos += 
+    }
+} 
+console.log(pos);  
