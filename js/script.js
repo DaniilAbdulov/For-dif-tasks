@@ -1,14 +1,15 @@
 'use strict';
 
-function powersOfTwo(n){
-    let arr =[];
-    for (let i = 0; i <= n; i++){
-      arr.push(2**i)
-    }
-    return arr;
+function numToString (num){
+  let string = 0;
+  for (let i = num.length - 1; i >= 0 ; i--){
+    string += +num[i];
   }
-powersOfTwo(0)
+  return string
+}
 
-// assert.deepEqual(powersOfTwo(0), [1])
-// assert.deepEqual(powersOfTwo(1), [1, 2])
-// assert.deepEqual(powersOfTwo(4), [1, 2, 4, 8, 16])
+
+let a = numToString ('321');
+let b = numToString ('123');
+
+console.log(a == b);
