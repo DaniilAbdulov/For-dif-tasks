@@ -1,14 +1,9 @@
 'use strict';
 
-let str = 'Daniil Abdulov Bilalovich';
-let target = 'a';
-let pos = 0;
+var reversePrefix = function(word, ch) {
+    let pos = word.indexOf (ch) + 1;
+    let str = word.slice(0,pos);
+    return str.split("").reverse().join("") + word.slice(pos);
+};
 
-while (true){
-    let foundPos = str.indexOf(target, pos);
-    if (foundPos == -1) break;
-    if (foundPos){
-        pos += 
-    }
-} 
-console.log(pos);  
+console.log(reversePrefix("abcdefd", "d"));
