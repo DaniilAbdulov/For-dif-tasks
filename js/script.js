@@ -1,8 +1,7 @@
 'use strict';
 
-var runningSum = function(nums) {
-    for (let i = 1; i < nums.length; i++){
-        nums[i] += nums[i-1]
-    }return nums;
-};
-console.log(runningSum([1,1,1,1,1]));
+function noSpace(x){
+    return x.replace(/\'_'/g, '\b')
+ }
+   
+console.log(noSpace('he ll o'));
