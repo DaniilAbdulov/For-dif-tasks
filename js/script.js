@@ -1,9 +1,8 @@
 'use strict';
 
-function correct(string){
-    for (let i = 0; i < string.length; i++){
-        
-    }
-    
-}
-console.log(correct('L0ND0N'));
+var runningSum = function(nums) {
+    for (let i = 1; i < nums.length; i++){
+        nums[i] += nums[i-1]
+    }return nums;
+};
+console.log(runningSum([1,1,1,1,1]));
