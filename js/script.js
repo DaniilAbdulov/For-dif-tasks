@@ -1,8 +1,8 @@
 'use strict';
-// 2. Add Two Numbers. Проблема в том, что в 5 строке не работает n.reverser()
+//2.Add two Numbers в логе все работает но LeetCode ругается на ошибку в 5 строке n.reverse() не является функцией
 var addTwoNumbers = function(l1, l2) {
     function fromStringtoNumber(n){
-        let arr = n.reverse();
+        let arr = n.reverse()
         let arrR = arr.join('');
         return +arrR;
     }
@@ -19,7 +19,3 @@ var addTwoNumbers = function(l1, l2) {
     return arr.reverse();
     
 };
-
-
-console.log(addTwoNumbers([9,9,9,9,9,9,9], [9,9,9,9]));
-
