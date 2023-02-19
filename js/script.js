@@ -1,16 +1,10 @@
 'use strict';
 //896.Monotonic Array
-var isMonotonic = function(nums) {
-    if (nums[0] < nums.length-1) {
-        for (let i = 0; i <nums.length; i++){
-            if (nums[i+1]<=i)continue;
-            return 'он монотонный возрастает'
-        }
-    }else if(nums[0] > nums.length-1){
-        for (let i = 0; i <nums.length; i++){
-            if (nums[i]<=i+1)continue;
-            return 'он монотонный убыв'
-        }
-    }else false  
+var mergeTwoLists = function(list1, list2) {
+    let arr = []
+    let newArr = arr.concat(list1, list2)
+    return newArr.sort( (a,b) => a -b )
 };
-console.log( isMonotonic([1,3,2]) );
+console.log( mergeTwoLists([1,2,4],[1,3,4]) );
+
+
