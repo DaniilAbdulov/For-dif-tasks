@@ -1,14 +1,16 @@
 'use strict';
-//896.Monotonic Array
-var maxOperations = function(nums, k) {
-    for (let i = 0; i < nums.length; i++){
-        if (nums[i] + nums[i+1] == k) {
-            
-        }
+
+function arrayDiff(a, b) {
+
+    for (let i = 0; i < a.length; i++) {
+      let val = a[i];
+
+      if (b.includes(val)) {
+        a.splice(i, 1);
+        i--;
+      }
     }
-};
+    return a;
+}
 
-
-console.log( maxOperations([1,2,3,4] , 5));
-
-
+console.log( arrayDiff([1,2,3], [1,2]) );
