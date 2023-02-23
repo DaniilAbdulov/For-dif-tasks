@@ -1,16 +1,16 @@
 'use strict';
 
-function arrayDiff(a, b) {
-
-    for (let i = 0; i < a.length; i++) {
-      let val = a[i];
-
-      if (b.includes(val)) {
-        a.splice(i, 1);
-        i--;
-      }
+var uniqueInOrder=function(iterable){
+  for (let i = 0; i < iterable.length; i++){
+    let val = iterable[i];
+    let newArr = iterable.slice(i);
+    
+    if (newArr.includes(val)){
+      iterable.splice(i,1)
+      i++
     }
-    return a;
+  }
+  return iterable
 }
 
-console.log( arrayDiff([1,2,3], [1,2]) );
+console.log( uniqueInOrder([1, 2, 2, 3, 3, 5, 5, 6, 6, 6, 7]) );
