@@ -1,16 +1,9 @@
 'use strict';
 
-var uniqueInOrder=function(iterable){
-  for (let i = 0; i < iterable.length; i++){
-    let val = iterable[i];
-    let newArr = iterable.slice(i);
-    
-    if (newArr.includes(val)){
-      iterable.splice(i,1)
-      i++
-    }
-  }
-  return iterable
-}
+var dominantIndex = function(nums) {
+    let example = nums.concat();
+    let arr = nums.sort( (a,b) => b - a );
+    return (arr[0] >= (2*arr[1])) ? example.indexOf(Math.max(...example)) : -1;
+};
 
-console.log( uniqueInOrder([1, 2, 2, 3, 3, 5, 5, 6, 6, 6, 7]) );
+console.log( dominantIndex([3,6,1,0]) );
