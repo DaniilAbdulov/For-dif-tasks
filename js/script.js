@@ -1,9 +1,8 @@
 'use strict';
 
-var dominantIndex = function(nums) {
-    let example = nums.concat();
-    let arr = nums.sort( (a,b) => b - a );
-    return (arr[0] >= (2*arr[1])) ? example.indexOf(Math.max(...example)) : -1;
+var multiply = function(num1, num2) {
+    let one = BigInt(num1);
+    let two = BigInt(num2);
+    return one * two +''
 };
-
-console.log( dominantIndex([3,6,1,0]) );
+console.log( multiply("123456789","987654321") );
