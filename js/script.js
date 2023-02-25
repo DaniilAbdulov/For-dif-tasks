@@ -1,17 +1,25 @@
 'use strict';
 
-function longestRepetition(s) {
-  let str = s;
 
-  let target = 'Иа'; // цель поиска
-  
-  let pos = 0;
-  while (true) {
-    let foundPos = str.indexOf(target, pos);
-    if (foundPos == -1) break;
-  
-    alert( `Найдено тут: ${foundPos}` );
-    pos = foundPos + 1; // продолжаем со следующей позиции
+
+var longestCommonPrefix = function(strs) {
+  strs.sort();
+  let s1 = strs[0];
+  let s2 = strs[strs.length-1];
+  let idx = 0;
+  while(idx < s1.length && idx < s2.length){
+      if(s1.charAt(idx) == s2.charAt(idx)){
+          idx++;
+      } else {
+          break;
+      }
   }
+  return s1.substring(0, idx);
 }
-console.log( longestRepetition("aaaabb") );
+
+
+
+
+console.log( longestCommonPrefix(["flowower","flow","flight"]) );
+console.log( longestCommonPrefix(["flower","flower","flower","flower"]) );
+console.log( longestCommonPrefix(["aaa","aa","aaa"]) );
