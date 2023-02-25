@@ -2,24 +2,17 @@
 
 
 
-var longestCommonPrefix = function(strs) {
-  strs.sort();
-  let s1 = strs[0];
-  let s2 = strs[strs.length-1];
-  let idx = 0;
-  while(idx < s1.length && idx < s2.length){
-      if(s1.charAt(idx) == s2.charAt(idx)){
-          idx++;
-      } else {
-          break;
-      }
-  }
-  return s1.substring(0, idx);
+function pizza(a, b) {
+    function area(d){
+        return 3.14 * Math.pow(d/2, 2)
+    }
+    let costOfBig = a / area(+prompt(`Диаметр большой пиццы`));
+    let costOfSmall = b / area(+prompt(`Диаметр маленькой пиццы`));
+    return (costOfBig < costOfSmall) ? `Выгоднее заказать 32см` : `Выгоднее заказать 25см`
+
 }
 
 
+alert( pizza(+prompt(`Стоимость большой пиццы`), +prompt(`Стоимость маленькой пиццы`)) );
 
 
-console.log( longestCommonPrefix(["flowower","flow","flight"]) );
-console.log( longestCommonPrefix(["flower","flower","flower","flower"]) );
-console.log( longestCommonPrefix(["aaa","aa","aaa"]) );
