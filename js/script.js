@@ -1,7 +1,8 @@
 'use strict';
-function reverseWords(str) {
-  return +str.toString(16)
-}
-console.log( reverseWords('1011') );
+function switcher(x){
+    let aplpabet = 'zyxwvutsrqponmlkjihgfedcba!? '
+    return x.map(item=>aplpabet.charAt(+item-1)).join('')
+  }
+console.log( switcher(['24', '12', '23', '22', '4', '26', '9', '8']) );
 
 
