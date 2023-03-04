@@ -1,12 +1,7 @@
 'use strict';
-var reverse = function(x) {
-    let str = x.toString()
-    let reverse = str.split('').reverse().join('')
-    if (str[0] == '-'){
-      return reverse
-    }return  +reverse
-    
-};
-
-console.log( reverse( -123  ));
+function SumSquares(l){
+  let map = new Map()
+  return map.set(l)
+}
+console.log( SumSquares([10,[[10],10],[10]]));
 
