@@ -1,1 +1,1 @@
-.map(item=>+item)
+i
