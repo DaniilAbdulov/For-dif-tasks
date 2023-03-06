@@ -1,7 +1,7 @@
 'use strict';
-function SumSquares(l){
-  let map = new Map()
-  return map.set(l)
+function descendingOrder(n){
+  let arr = n.toString().split('').map(item=>+item).sort( (a,b)=>b-a ).join('')
+  return +arr
 }
-console.log( SumSquares([10,[[10],10],[10]]));
+console.log( descendingOrder(124));
 
