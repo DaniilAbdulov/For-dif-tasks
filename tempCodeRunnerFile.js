@@ -1,1 +1,1 @@
-count
+      return result[i]
