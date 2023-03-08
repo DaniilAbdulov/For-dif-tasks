@@ -1,5 +1,5 @@
 'use strict';
-function countSheeps(arrayOfSheep) {
+function countSheepsd(arrayOfSheep) {
   return arrayOfSheep.map(item=>+item).reduce( (s,c)=>s+c,0 )
 }
 console.log( countSheeps([true,  true,  true,  false,
