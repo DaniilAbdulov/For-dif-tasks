@@ -1,10 +1,8 @@
 'use strict';
 
-function ageInDays(year, month, day){
-  var birthday = new Date();
-  birthday.setDate(birthday.getDate() - 365);
-  return birthday
-
+function yearDays(year){
+  let date = new Date(year,2,0);
+  return date
 }
 
-console.log( ageInDays(2023,2,1) );
+console.log( yearDays(-64) );
