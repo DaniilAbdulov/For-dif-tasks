@@ -1,9 +1,20 @@
 'use strict';
 
-function yearDays(year){
-  let date = new Date(year,2,0);
-  let day = date.getDate()
-  return (day == 29) ? `${year} has 366 days`:`${year} has 365 days`
+function findOutlier(integers){
+  let arr = Array.from(new Set(integers))
+  if(arr[0]%2==0 && arr[1]%2==0){
+    for (let val of arr){
+      if (val % 2 == 1){
+        return val
+      }
+    }
+  }else {
+    for (let val of arr){
+      if (val % 2 == 0){
+        return val
+      }
+    }
+  }
 }
 
-console.log( yearDays(-64) );
+console.log( findOutlier([1, 2, 3]) );
