@@ -1,13 +1,13 @@
 'use strict';
 
-function wave(str){
-  let arr = str.split('');
-  let answer = []
-  for (let i = 0; i < arr.length; i++){
-    let letter = arr[i].toUpperCase();
-    
+function getMiddle(s){
+  if (s.length % 2 == 0){
+    return s[(s.length/2)-1] + s[s.length/2]
+  }else if(s.length % 2 != 0){
+    return s[Math.floor(s.length/2)]
   }
-  return answer
-  
 }
- console.log( wave('hello') )
+console.log(getMiddle("test"))//"es");
+console.log(getMiddle("testing"))//"t");
+console.log(getMiddle("middle"))//"dd");
+console.log(getMiddle("A"))//"A");
