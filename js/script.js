@@ -1,13 +1,12 @@
 'use strict';
 
-function getMiddle(s){
-  if (s.length % 2 == 0){
-    return s[(s.length/2)-1] + s[s.length/2]
-  }else if(s.length % 2 != 0){
-    return s[Math.floor(s.length/2)]
-  }
-}
-console.log(getMiddle("test"))//"es");
-console.log(getMiddle("testing"))//"t");
-console.log(getMiddle("middle"))//"dd");
-console.log(getMiddle("A"))//"A");
+var fractionToDecimal = function(numerator, denominator) {
+    let result = numerator/denominator;
+    let str = result +'';
+    if (str.length > 4){
+      return Math.trunc(result) + '.' + `(${str.slice(2,5)})`
+    }return str
+};
+console.log( fractionToDecimal(1,6) );
+
+
