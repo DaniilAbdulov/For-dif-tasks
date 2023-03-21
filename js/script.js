@@ -1,12 +1,13 @@
 'use strict';
 
-var fractionToDecimal = function(numerator, denominator) {
-    let result = numerator/denominator;
-    let str = result +'';
-    if (str.length > 4){
-      return Math.trunc(result) + '.' + `(${str.slice(2,5)})`
-    }return str
-};
-console.log( fractionToDecimal(1,6) );
+function replicate(times, number) {
+	let arr = [];
+  if (times == 1){
+    return times
+  }else{
+    return arr.push(replicate(times-1,number))
+  }
+}
+console.log( replicate(3,1) );
 
 
