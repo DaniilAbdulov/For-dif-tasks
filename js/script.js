@@ -1,19 +1,18 @@
 'use strict';
 
-function explode(x){
-  function arr(n){
-    let arr = [];
-    for (let i = 0; i < n;i++){
-      arr.push(x)
+function initializeNames(name){
+  let arr = name.split(' ');
+  if (arr.length <= 2){
+    return name
+  }else{
+    let newArr = arr.slice(1).reverse().slice(1).reverse();
+    let elem = []
+    for (let i = 0;i < newArr.length;i++){
+      elem.push(newArr[i][0]+'.')
     }
-    return arr;
+    return arr[0] + ' ' +elem.join(' ') + ' ' + arr.at(-1)
   }
-  return (typeof x[0] == 'string' || typeof x[1] == 'string') ? 'Void!' :
-  (x.includes(0)) ? [] : 
-  (typeof x[0] == 'number') ? arr(x[0]) :
-  (typeof x[1] == 'number') ? arr(x[1]) :
-  (typeof x[0] == 'number' || typeof x[1] == 'number') ? arr(x[0] + x[1]) : '';
 }
-console.log( explode(['c', 5]) );
+console.log( initializeNames('Lois Mary Lane') );
 
 
