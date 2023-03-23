@@ -1,0 +1,42 @@
+body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: rgb(112, 100, 100);
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto ;
+}
+.body {
+    margin-top: 100px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction: column;
+}
+.title {
+    font-weight: 600;
+    font-size: 30px;
+}
+.title span{
+    color: yellow;
+}
+.tasc {
+
+}
+.tasc__container {
+    display: flex;
+}
+.tasc__image {
+    
+}
+.tasc__image img{
+    border-radius: 50px;
+    object-fit: cover;
+}
+.tasc__subtitle {
+    text-align: center;
+    font-size: 25px;
+    color: bisque;
+}
