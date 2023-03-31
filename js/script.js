@@ -1,15 +1,11 @@
 'use strict';
-const sumNested = l => {
-    if(Array.isArray(l)){
-      return l.reduce( (a,b)=> a+b,0 )
-    }else{
-      let sum = 0;
-      for (let sub of Object.entries(l)){
-        sum += sumNested(sub)
-      }
-      return sum
-    }
+var merge = function(nums1, m, nums2, n) {
+  let arrOne = nums1.slice(0,m)
+  let arrTwo = nums2.slice(0,n)
+  let result = arrOne + ','+ arrTwo;
+  return 
 };
-console.log(sumNested([10,[[10],10],[10]]));
+console.log(merge([1,2,3,0,0,0], 3, [2,5,6], 3));
+
 
 
