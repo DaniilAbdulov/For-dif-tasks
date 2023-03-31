@@ -1,11 +1,15 @@
 'use strict';
-var merge = function(nums1, m, nums2, n) {
-  let arrOne = nums1.slice(0,m)
-  let arrTwo = nums2.slice(0,n)
-  let result = arrOne + ','+ arrTwo;
-  return 
+var findErrorNums = function(nums) {
+   let arr = [];
+    for(let i = 0; i  < nums.length;i++){
+      if(nums[i] == nums[i+1]){
+        arr.push(nums[i])
+        arr.push(nums[i]+1)
+      }
+    }
+    return arr
 };
-console.log(merge([1,2,3,0,0,0], 3, [2,5,6], 3));
+console.log( findErrorNums([1,1]) );
 
 
 
