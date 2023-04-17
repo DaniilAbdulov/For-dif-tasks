@@ -1,10 +1,10 @@
 'use strict'
-function minValue(values){
-  let set = new Set();
-  for(let val of values){
-    set.add(val)
-  }
-  let arr = [...set].sort( (a,b)=> a - b).reduce((a,b)=>a+b,'')
-  return +arr
+function countSmileys() {
+  return Math.cbrt('}'.codePointAt())
 }
-console.log( minValue([1,6,3,4]) );
+
+console.log( countSmileys());
+/*
+[99,126,100,127,144,171,225,252,145,172,226,253]
+
+*/
