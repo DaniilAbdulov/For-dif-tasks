@@ -1,10 +1,7 @@
 'use strict'
-function countSmileys() {
-  return Math.cbrt('}'.codePointAt())
+
+function convertTemperature(Celsius){
+  let arr = [Celsius + 273.15,Celsius*1.8 + 32];
+  return arr;
 }
-
-console.log( countSmileys());
-/*
-[99,126,100,127,144,171,225,252,145,172,226,253]
-
-*/
+console.log( convertTemperature(36.5) )
