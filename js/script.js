@@ -1,15 +1,32 @@
 'use strict'
+function slow(x) {
+  // здесь могут быть ресурсоёмкие вычисления
+  //console.log(`Called with ${x}`);
+  return x;
+}
 
-var lastStoneWeight = function(stones) {
-  let arr = stones.sort( (a,b)=>b-a );
-  let newArr = [];
-  for(let i=0;i<arr.length;i++){
-    newArr.push(arr[i]-arr[i+1])
-    i++;
-  }
-  return newArr
-};
+function cachingDecorator(func) {
+  let cache = new Map();
 
-console.log(lastStoneWeight([2,7,4,1,8,1]))
+  return function(x) {
+    if (cache.has(x)) { 
+      console.log('я сработал')   // если кеш содержит такой x,
+      return cache.get(x); // читаем из него результат
+    }
+    
+    let result = func(x); // иначе, вызываем функцию
 
-// [ 8, 7, 4, 2, 1, 1 ]
+    cache.set(x, result);
+    console.log(cache) // и кешируем (запоминаем) результат
+    return result;
+  };
+}
+
+slow = cachingDecorator(slow);
+
+console.log( slow(1) ); // slow(1) кешируем
+// console.log( "Again: " + slow(1) ); // возвращаем из кеша
+
+console.log( slow(2) ); // slow(2) кешируем
+//console.log( "Again: " + slow(2) ); // возвращаем из кеша
+console.log( slow(1) );
