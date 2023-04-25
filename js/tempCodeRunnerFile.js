@@ -1,11 +1,7 @@
-    function work(obj){
-      let str = JSON.stringify(obj);
-      let arr = [];
-      for(let val of str){
-        arr.push(val.codePointAt())
-      }
-      return arr.reduce( (a,b)=>a+b,0 );
-    }
-    let arr1 = work(o1);
-    let arr2 = work(o2);
-    return (arr1 == arr2) ? true : false;
+'use strict'
+
+function sortArray(array) {
+  let arrOdd = array.filter(item=>item%2!=0);
+  return arrOdd
+}
+console.log(sortArray([5, 8, 6, 3, 4]))
