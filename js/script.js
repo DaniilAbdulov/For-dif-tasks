@@ -1,7 +1,7 @@
 'use strict'
 function slow(x) {
   // здесь могут быть ресурсоёмкие вычисления
-  //console.log(`Called with ${x}`);
+  console.log(`Called with ${x}`);
   return x;
 }
 
@@ -24,9 +24,9 @@ function cachingDecorator(func) {
 
 slow = cachingDecorator(slow);
 
-console.log( slow(1) ); // slow(1) кешируем
+( slow(1) ); // slow(1) кешируем
 // console.log( "Again: " + slow(1) ); // возвращаем из кеша
 
-console.log( slow(2) ); // slow(2) кешируем
+( slow(2) ); // slow(2) кешируем
 //console.log( "Again: " + slow(2) ); // возвращаем из кеша
-console.log( slow(1) );
+( slow(1) );
