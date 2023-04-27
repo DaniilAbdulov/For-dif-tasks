@@ -1,6 +1,11 @@
 'use strict'
-function rotatePaper(number) {
-  if(number != 0 || number!= 8){return false}
-  return (number.includes('1')||number.includes('4')||number.includes('7')) ? false : true
+function formatDuration (seconds) {
+  let date = new Date();
+  date.setUTCHours(0,0)
+  date.setSeconds(seconds);
+  let hour = date.getUTCHours();
+  let minutes = date.getUTCMinutes();
+  let sec = date.getUTCSeconds();
+  return (`${hour} hour, ${minutes} and ${sec}`)
 }
-console.log(rotatePaper('6'))
+console.log(formatDuration(3655))
