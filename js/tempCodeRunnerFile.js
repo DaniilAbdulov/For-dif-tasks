@@ -1,3 +1,1 @@
-{
-  value: "John"
-}
+true
