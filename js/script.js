@@ -1,8 +1,14 @@
 'use strict'
-
-var average = function(salary) {
-    let arr = salary.sort( (a,b)=>a-b ).slice(0,salary.length-1)
-    let workarr = arr.slice(1,arr.length);
-    return workarr.reduce( (a,b)=>a+b,0 )/workarr.length;
-};
-console.log(average([4000,3000,1000,2000]))
+function discr(a,b,c){
+    let d = Math.pow(b,2) - 4*a*c;
+    if(d > 0){
+        let one = Math.abs((b + Math.sqrt(d))/2*a);
+        let two = Math.abs((b - Math.sqrt(d))/2*a);
+        return `Первый корень: ${one}, а второй: ${two};`
+    }else if(d == 0){
+        return (-b)/2*a
+    }else{
+        return 'Корней нет'
+    }
+}
+console.log( discr(-1,7,-10) );
