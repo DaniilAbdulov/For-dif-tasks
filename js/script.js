@@ -1,14 +1,35 @@
 'use strict'
-function discr(a,b,c){
-    let d = Math.pow(b,2) - 4*a*c;
-    if(d > 0){
-        let one = Math.abs((b + Math.sqrt(d))/2*a);
-        let two = Math.abs((b - Math.sqrt(d))/2*a);
-        return `Первый корень: ${one}, а второй: ${two};`
-    }else if(d == 0){
-        return (-b)/2*a
-    }else{
-        return 'Корней нет'
-    }
+function hello(){
+  console.log('Hello', this)
 }
-console.log( discr(-1,7,-10) );
+const person = {
+  name: 'Daniil',
+  age:25,
+  sayHello: hello,
+  logInfo: function(job,phone){
+    console.log(`Name is ${this.name}`)
+    console.log(`Age is ${this.age}`)
+    console.log(`Job is ${job}`)
+    console.log(`Phone is ${phone}`)
+  }
+}
+const lena = {
+  name:'Elena',
+  age:20
+}
+//person.logInfo.bind(lena,'Front','89220028666')();
+//person.logInfo.call(lena,'Front','89220028666');
+person.logInfo.apply(lena,['Front','89220028666']);
+
+const array = [1,2,3,4,5];
+// function multBy(arr,n){
+//   return arr.map(function(i){
+//     return i * n
+//   })
+// }
+Array.prototype.multBy = function(n){
+  return this.map(function(i){
+    return i * n
+  })
+}
+console.log(array.multBy(20))
