@@ -1,11 +1,11 @@
 'use strict'
 
-let arr = [1,2,3,4];
-
-Array.prototype.m = function(n){
-    return this.map(function(i){
-        return i + n
-    })
+Function.prototype.defer=function(ms){
+    setTimeout(this,ms);
 }
 
-console.log(arr.m('-'))
+function f() {
+    console.log("Hello!");
+  }
+  
+f.defer(3000);
