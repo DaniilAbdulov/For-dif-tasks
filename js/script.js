@@ -1,31 +1,20 @@
 'use strict'
 
-let worker = {
-  slow(min,max){
-    console.log(`Called with ${min},${max}`);
-    return min + max;
-  }
+var createCounter = function(init) {
+    let num = init;
+    function increment(){
+      return ++num;
+    }
+    function reset(){
+      return num = init;
+    }
+    function decrement(){
+      return --num;
+    }
+    return { increment, decrement, reset };
 };
 
-function cachingDecorator(func,hash){
-  let cache = new Map();
-  return function(){
-    let key = hash(arguments);
-
-    if(cache.has(key)){
-      return cache.get(key);
-    }
-    let result = func.apply(this,arguments);
-    cache.set(key,result);
-    return result;
-  }
-
-}
-function hash(args){
-  return args[0] + 'and' + args[1];
-}
-
-worker.slow = cachingDecorator(worker.slow,hash);
-
-console.log( worker.slow(3,5) );
-console.log( worker.slow(3,5) );
+const counter = createCounter(5);
+counter.increment(); // 6
+// counter.reset(); // 5
+// counter.decrement(); // 4
