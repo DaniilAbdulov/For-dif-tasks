@@ -1,21 +1,23 @@
 'use strict'
 
 
-function bouncingBall(h,  bounce, window) {
-  if(h > 0 && (bounce > 0 && bounce < 1) && h > window){
-    let count = 1;
-    let res = h;
-    while(res > window){
-      let p = 1;
-      res *= Math.pow(bounce,p)
-      count += 2;
-      p++
+var leftRigthDifference = function(nums) {
+    let leftSum = [0];
+    for(let i = 0;i<nums.length-1;i++){
+      leftSum.push(leftSum[i]+nums[i])
     }
-    return count-2
-  }else{
-    return -1;
-  }
- 
-}
-console.log( bouncingBall(3.0, 1.0, 1.5) );
+    nums.reverse();
+    let rightSum = [0];
+    for(let i = 0;i<nums.length-1;i++){
+      rightSum.push(rightSum[i]+nums[i])
+    }
+    let right = rightSum.reverse();
+    let answer = [];
+    for(let i = 0; i < nums.length;i++){
+      answer.push(Math.abs(leftSum[i]-right[i]));
+    }
+    return answer
+};
+
+console.log( leftRigthDifference([1]) )
 

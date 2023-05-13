@@ -1,1 +1,1 @@
-30.0, 0.66, 1.5
+    let arr = nums.reverse();
