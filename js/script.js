@@ -1,23 +1,14 @@
 'use strict'
 
 
-var leftRigthDifference = function(nums) {
-    let leftSum = [0];
-    for(let i = 0;i<nums.length-1;i++){
-      leftSum.push(leftSum[i]+nums[i])
+function maxMultiple(divisor, bound){
+  let arr = [];
+  for(let i = 1;i<bound;i++){
+    if(divisor*i <= bound){
+      arr.push(divisor*i);
     }
-    nums.reverse();
-    let rightSum = [0];
-    for(let i = 0;i<nums.length-1;i++){
-      rightSum.push(rightSum[i]+nums[i])
-    }
-    let right = rightSum.reverse();
-    let answer = [];
-    for(let i = 0; i < nums.length;i++){
-      answer.push(Math.abs(leftSum[i]-right[i]));
-    }
-    return answer
-};
-
-console.log( leftRigthDifference([1]) )
+  }
+  return Math.max(...arr);
+}
+console.log( maxMultiple(2,7) )
 
