@@ -1,14 +1,12 @@
 'use strict'
 
-
-function maxMultiple(divisor, bound){
-  let arr = [];
-  for(let i = 1;i<bound;i++){
-    if(divisor*i <= bound){
-      arr.push(divisor*i);
-    }
-  }
-  return Math.max(...arr);
+function removeSmallest(numbers) {
+  let min = numbers.indexOf(Math.min(...numbers));
+  let arr = numbers;
+  arr.splice(min,1)
+  return arr;
 }
-console.log( maxMultiple(2,7) )
+console.log( removeSmallest([196, 291, 112, 71, 181]) )
+
+
 
