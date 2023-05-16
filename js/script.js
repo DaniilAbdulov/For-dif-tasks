@@ -1,12 +1,12 @@
 'use strict'
 
-function removeSmallest(numbers) {
-  let min = numbers.indexOf(Math.min(...numbers));
-  let arr = numbers;
-  arr.splice(min,1)
-  return arr;
-}
-console.log( removeSmallest([196, 291, 112, 71, 181]) )
+var kidsWithCandies = function(candies, extraCandies) {
+    let max = Math.max(...candies);
+    let n = extraCandies;
+    let arr = candies.map(item=>item+n);
 
+    return arr.map(item=>item>=max);
+};
 
+console.log( kidsWithCandies([2,3,5,1,3],3) )
 
