@@ -1,12 +1,11 @@
 'use strict'
-class Sum{
-    constructor(num1,num2){
-        this.a = num1;
-        this.b = num2;
+var sumOfMultiples = function(n) {
+    let arr = [];
+    for(let i = 1;i<=n;i++){
+        if((i % 3 == 0) || (i % 5 == 0) || (i % 7 == 0)){
+            arr.push(i)
+        }
     }
-    sum(){
-        return this.a + this.b;
-    }
-}
-let s = new Sum(1,2);
-console.log( s.sum() );
+    return arr.reduce( (a,b)=> a + b,0 );
+};
+console.log( sumOfMultiples(7) )
