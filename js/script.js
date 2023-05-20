@@ -1,11 +1,17 @@
 'use strict'
-var sumOfMultiples = function(n) {
+
+var sortSentence = function(s) {
+    let str = s.split(' ');
     let arr = [];
-    for(let i = 1;i<=n;i++){
-        if((i % 3 == 0) || (i % 5 == 0) || (i % 7 == 0)){
-            arr.push(i)
+    for(let i = 0; i < str.length;i++){
+        let n = i+1;
+        for(let j = 0; j < str.length;j++){
+            if(str[j].includes(n)){
+                arr[i] = str[j]
+            }
         }
     }
-    return arr.reduce( (a,b)=> a + b,0 );
+    return arr.map(item=>item.slice(0,item.length-1)).join(' ');
 };
-console.log( sumOfMultiples(7) )
+
+console.log( sortSentence('is2 sentence4 This1 a3') )
