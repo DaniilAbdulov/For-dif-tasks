@@ -1,17 +1,13 @@
 'use strict'
 
-var sortSentence = function(s) {
-    let str = s.split(' ');
-    let arr = [];
-    for(let i = 0; i < str.length;i++){
-        let n = i+1;
-        for(let j = 0; j < str.length;j++){
-            if(str[j].includes(n)){
-                arr[i] = str[j]
-            }
-        }
-    }
-    return arr.map(item=>item.slice(0,item.length-1)).join(' ');
-};
+let a = document.getElementById('cl')
+a.style.opacity = '0';
 
-console.log( sortSentence('is2 sentence4 This1 a3') )
+let n = document.querySelector('.box');
+n.style.opacity = '0';
+
+function hide(elem){
+    elem.style.opacity = '1'
+}
+setTimeout(()=>hide(n),2000);
+setTimeout(()=>hide(a),7000);
