@@ -1,13 +1,19 @@
-'use strict'
+function isPalindrome(x) {
+    let str = x.toLowerCase();
+    let start = 0;
+    let end = str.length - 1;
+    while (start < end){
+        const firstChar = str[start];
+        const lastChar = str[end];
+        if(firstChar !== lastChar){
+            return false
+        }
+        start += 1;
+        end -= 1;
+    }
+    return true
 
-let a = document.getElementById('cl')
-a.style.opacity = '0';
+    
+  }
 
-let n = document.querySelector('.box');
-n.style.opacity = '0';
-
-function hide(elem){
-    elem.style.opacity = '1'
-}
-setTimeout(()=>hide(n),2000);
-setTimeout(()=>hide(a),7000);
+console.log( isPalindrome('Mada') )
