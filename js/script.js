@@ -1,19 +1,23 @@
-function isPalindrome(x) {
-    let str = x.toLowerCase();
+function maxProduct(a) {
+    let one;
+    let two;
     let start = 0;
-    let end = str.length - 1;
-    while (start < end){
-        const firstChar = str[start];
-        const lastChar = str[end];
-        if(firstChar !== lastChar){
-            return false
+    let end = a.length-1;
+    function search(arr){
+        one = arr[start];
+        two = arr[end];
+        while(start < end){
+            if(one > arr[start+1]){
+                continue
+            }else{
+                one = arr[start+1]
+            }
         }
         start += 1;
         end -= 1;
     }
-    return true
-
-    
+    search(a)
+    return one
   }
 
-console.log( isPalindrome('Mada') )
+console.log( maxProduct([56, 335, 195, 443, 6, 494, 252]) )
