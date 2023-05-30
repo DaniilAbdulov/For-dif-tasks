@@ -1,16 +1,17 @@
-function loadScript(src, callback) {
-  let script = document.createElement('script');
-  script.src = src;
-
-  script.onload = () => callback(null, script);
-  script.onerror = () => callback(new Error(`Не удалось загрузить скрипт ${src}`));
-
-  document.head.append(script);
-}
-loadScript('/my/scrip.js', function(error, script) {
-  if (error) {
-    console.log(error + ' !!!!!')
-  } else {
-    console.log(`скрипт ${script.src} успешно загружен`)
+// const sumSquareEvenRootOdd = ns => {
+//   return ns
+// };
+var sumSquareEvenRootOdd = function(ns){
+  let sum = 0;
+  for(let i = 0; i < ns.length; i++){
+    if(ns[i] % 2 == 0){
+      sum += Math.pow((ns[i]),2)
+    }else {
+      sum += Math.sqrt(ns[i])
+    }
   }
-});
+  return +sum.toFixed(2)
+  
+}
+
+console.log(sumSquareEvenRootOdd([4,5,7,8,1,2,3,0]))
