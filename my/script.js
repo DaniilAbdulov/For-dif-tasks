@@ -1,1 +1,4 @@
-console.log('я второй')
+function newFunction() {
+    console.log('5')
+    console.log('50')
+}
