@@ -1,17 +1,12 @@
-// const sumSquareEvenRootOdd = ns => {
-//   return ns
-// };
-var sumSquareEvenRootOdd = function(ns){
-  let sum = 0;
-  for(let i = 0; i < ns.length; i++){
-    if(ns[i] % 2 == 0){
-      sum += Math.pow((ns[i]),2)
-    }else {
-      sum += Math.sqrt(ns[i])
-    }
+var twoSum = function(nums, target) {
+  let first = 0;
+  let second = 1;
+  let sum = 0
+  while(sum != target){
+    sum = nums[first] + nums[second];
+    first = second;
+    second +=1;
   }
-  return +sum.toFixed(2)
-  
+  return [first-1,second-1]
 }
-
-console.log(sumSquareEvenRootOdd([4,5,7,8,1,2,3,0]))
+console.log( twoSum([3,2,4], 6) );
