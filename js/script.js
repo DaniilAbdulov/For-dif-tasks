@@ -1,17 +1,11 @@
-
-var sumOfUnique = function(nums) {
-  let cache = new Set();
-  let sum = 0;
-  for (let i = 0; i < nums.length; i++) {
-    if (!cache.has(nums[i])) {
-      cache.add(nums[i]);
-      sum += nums[i];
+function validateBet(game, text) {
+    function checkNumbers(text) {
+        for (let i = 0; i < text.length; i++) {
+            let elem = text[i];
+            console.log(isFinite(elem));
+        }
     }
-    else {
-      sum -= nums[i];
-    }
-  }
-  return sum;
-};
+    checkNumbers(text);
+}
 
-console.log( sumOfUnique([1,1,1,1,1,1]) );
+console.log(validateBet([5, 90], '1 2 3 4 5'));
