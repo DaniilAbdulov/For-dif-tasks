@@ -1,18 +1,37 @@
-function changeValuesOfLanguages(val) {
-    const sumOfValues = Object.values(val).reduce((a, b) => a + b, 0);
-    const arr = Object.entries(val);
-    const newArr = [];
-    for (let i of arr) {
-        newArr.push([i[0], ((i[1] / sumOfValues) * 100).toFixed(2) + " %"]);
+function getDataAboutFavoriteLanguages(langArray) {
+    function sumValues(data) {
+        let total = 0;
+        for (const lang of data) {
+            total += lang[1];
+        }
+        return total;
     }
-    return Object.fromEntries(newArr);
+    const totalCount = sumValues(langArray);
+    function mergeAndSumRepeatedKeys(data, totalCount) {
+        const mergedData = {};
+
+        for (const lang of data) {
+            if (mergedData.hasOwnProperty(lang[0])) {
+                mergedData[lang[0]] += lang[1] / totalCount;
+            } else {
+                mergedData[lang[0]] = lang[1] / totalCount;
+            }
+        }
+
+        return mergedData;
+    }
+    const resultObject = mergeAndSumRepeatedKeys(langArray, totalCount);
+    return resultObject;
 }
 
-const result = changeValuesOfLanguages({
-    HTML: 36739,
-    CSS: 26266,
-    SCSS: 25803,
-    JavaScript: 9366,
-    PHP: 3496,
-});
+const result = getDataAboutFavoriteLanguages([
+    ["JavaScript", 20487],
+    ["Vue", 9428],
+    ["SCSS", 972],
+    ["HTML", 943],
+    ["HTML", 18051],
+    ["SCSS", 15992],
+    ["CSS", 14438],
+]);
+
 console.log(result);
