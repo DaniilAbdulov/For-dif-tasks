@@ -1,5 +1,5 @@
 {
-    "name": "fortaskfromleetcodencodewars",
+    "name": "for-dif-tasks",
     "version": "1.0.0",
     "description": "",
     "main": "index.js",
@@ -10,7 +10,6 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
-        "assert": "^2.0.0",
         "jest": "^29.7.0"
     }
 }
