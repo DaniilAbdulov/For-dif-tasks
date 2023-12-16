@@ -4,12 +4,16 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "test": "jest"
+        "test": "jest",
+        "start": "npx tsc checkData.ts"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "dependencies": {
         "jest": "^29.7.0"
+    },
+    "devDependencies": {
+        "typescript": "^5.3.3"
     }
 }
